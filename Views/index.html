@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/style.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div>
+    <ul id="main_nav">
+    <li class="main_nav_link active"><a href="/">Startseite</a></li>
+    <li class="main_nav_link"><a href="/">Informationen</a></li>
+    <li class="main_nav_link"><a href="/">Neues</a></li>
+    <li class="main_nav_link_float"><a href="/">Kontakt</a></li>
+    </ul>
+</div>
+<ul id="content_box_wide">
+    {% for element in array %}
+    <li>{{element}}</li>
+    {% endfor%}
+</ul>
+</body>
+</html>
