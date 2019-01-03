@@ -8,4 +8,14 @@ module.exports = {
             callbacks(rows);
         });
     },
+
+    post: function (db, callbacks) {
+        db.all("SELECT * FROM entry WHERE Id = " + id, [], (err, rows) => {
+            if (err) {
+                console.error(err);
+            }
+
+            callbacks(rows);
+        });
+    },
 };

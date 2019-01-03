@@ -2,22 +2,82 @@
 <link rel="stylesheet" href="/style.css">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Index</title>
+    <meta charset="utf-8">
+    <title>67P/Churyumov-Gerasimenko</title>
+    <meta name="description" content="">
+    <meta name="author" content="Jan-Patrick Rönnau & Florian Bruns & Vladimir Klippert">
+    <meta name="keywords" content="">
+    <link href="css/style.css"  rel="stylesheet">
 </head>
 <body>
 <div>
+    <div class="header">
+        <h1>67P/Churyumov-Gerasimenko</h1>
+        <h2>Morphologie und Aktivität des Kometen</h2>
+    </div>
     <ul id="main_nav">
     <li class="main_nav_link active"><a href="/">Startseite</a></li>
     <li class="main_nav_link"><a href="/">Informationen</a></li>
     <li class="main_nav_link"><a href="/">Neues</a></li>
-    <li class="main_nav_link_float"><a href="/">Kontakt</a></li>
+    <li class="main_nav_link_float"><a href="/login">Login</a></li>
+    <li class="main_nav_link_float"><a href="/contact">Kontakt</a></li>
     </ul>
 </div>
-<ul id="content_box_wide">
-    {% for element in array %}
-    <li>{{element}}</li>
+<h2 id="content_box_wide">
+    {% for element in headline %}
+    <div class="col content_box_wide">
+        <div class="content_img_txt">
+            <div class="txt_justify">
+                {{element}}
+            </div> </div> </div>
     {% endfor%}
-</ul>
+</h2>
+{% for element in text %}
+<div class="col content_box_wide">
+    <div class="content_img_txt">
+        <div class="txt_justify">
+            {{element}}
+        </div> </div></div>
+{% endfor%}
+
+<div class="main_content">
+    <div class="col content_box">
+        <img src="img/ringvorlesung.jpg">
+        <div class="content_img_txt_info">
+            <h3>Ringvorlesung</h3>
+            <p>Im Rahmen der Ringvorlesung »Astronomie und Raumfahrt« der Fachhochschule Flensburg, organisiert von Rainer Christiansen, wurde Dr. Holger Sierks vom Max Planck Institut für Sonnensystemforschung aus Göttingen eingeladen.</p>
+            <p><a href="/">[mehr lesen...]</a></p>
+        </div>
+    </div>
+    <div class="col content_box">
+        <img src="img/kometenlander_philae.jpg">
+        <div class="content_img_txt_info">
+            <h3>Lander Philae gesichtet</h3>
+            <p>Am Morgen nach der Landung konnte im Kontrollzentrum der ESA zwischen 07:01 und 10:58 Uhr MEZ wieder Kontakt mit Philae aufgenommen werden.</p>
+            <p><a href="/#new">[mehr lesen...]</a></p>
+        </div>
+    </div>
+    <div class="col content_box">
+        <img src="img/sonde_rosetta.jpg">
+        <div class="content_img_txt_info">
+            <h3>Mission erfolgreich beendet</h3>
+            <p>Zum Ende der Mission ließ man Rosetta am 30. September 2016 gezielt auf den Kometen fallen.</p>
+            <p>Fünf Sekunden vor dem Aufprall wurde die letzte Nahaufnahme aus etwa 20 m Abstand erstellt, die nicht mehr fokussiert war und aus Zeitmangel nur hochkomprimiert übertragen werden konnte.</p>
+            <p><a href="/">[mehr lesen...]</a></p>
+        </div>
+    </div>
+    <div class="col content_box">
+        <img src="img/komet4.jpg">
+        <div class="content_img_txt_info">
+            <h3>67P/Churymov-Gerasimenko</h3>
+            <p>Hinsichtlich der Entstehung von Tschurjumow-Gerassimenko vermuteten Forscher entweder eine Kollision zweier separater Körper oder eine besonders intensive Erosion an der Stelle des Kometen, die sich daraufhin zu einem „Hals“ entwickelt hat.</p>
+            <p><a href="/">[mehr lesen...]</a></p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="impressum">| <a href="/">ZEITLEISTE</a> | <a href="/impressum">IMPRESSUM</a> | <a href="/">DOKUMENTATION</a></div>
+</footer>
 </body>
 </html>

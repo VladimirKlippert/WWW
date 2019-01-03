@@ -11,7 +11,7 @@ h2, p, li,a,div{
 body{
 	margin: 0 10% 0 10%;
 	color:#fff;
-	background: url("../img/pattern.png");repeat-x;repeat-y;
+	background: url("../img/pattern.png");repeat-x;repeat-y;;
 }
 
 img{

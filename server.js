@@ -30,7 +30,40 @@ app.get("/", function(req, res) {
 });
 
 app.get("/entry/:id", function(req, res) {
-    res.send('eintrag nummer: ' + req.params.id);
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+        controller.post(db, req, res);
+    });
+});
+
+app.get("/contact", function(req, res) {
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+        controller.contact(db, req, res);
+    });
+});
+
+app.get('/entry/add',function(req, res){
+    controller.add(db, req, res);
+});
+app.get('/login',function(req, res){
+    controller.login(db, req, res);
+});
+app.get('/logout',function(req, res){
+    controller.logout(db, req, res);
+});
+app.get('/impressum',function(req, res){
+
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+        controller.impressum(db, req, res);
+    });
 });
 
 app.use(function (req, res) {
