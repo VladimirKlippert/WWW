@@ -7,6 +7,7 @@ const expressNunjucks = require("express-nunjucks");
 const sqlite3 = require("sqlite3");
 
 const controller = require("./src/site/controller");
+const formcontroller =require("./src/site/formcontroller")
 
 const app = express();
 app.use(express.static("public"));
@@ -47,9 +48,24 @@ app.get("/contact", function(req, res) {
     });
 });
 
-app.get('/entry/add',function(req, res){
-    controller.add(db, req, res);
+app.get('/add',function(req, res){
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+    formcontroller.add(db, req, res);
+    });
 });
+
+app.post('/add',function(req, res){
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+    formcontroller.adddata(db, req, res)
+    });
+});
+
 app.get('/login',function(req, res){
     controller.login(req, res);
 });

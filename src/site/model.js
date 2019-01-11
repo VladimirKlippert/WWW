@@ -18,4 +18,10 @@ module.exports = {
             callbacks(rows);
         });
     },
+
+    addData: function (db,next, req,res){
+        sql = `INSERT INTO entry (Id, Title, Text, Date) VALUES ($id, $headline, $text, $date)`;
+
+
+    },
 };

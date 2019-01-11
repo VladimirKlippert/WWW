@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="/style.css">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>67P/Churyumov-Gerasimenko</title>
+    <meta name="description" content="">
+    <meta name="author" content="Jan-Patrick Rönnau & Florian Bruns & Vladimir Klippert">
+    <meta name="keywords" content="">
+    <link href="css/style.css"  rel="stylesheet">
+
+<body>
+<div>
+    <div class="header">
+        <h1>67P/Churyumov-Gerasimenko</h1>
+        <h2>Morphologie und Aktivität des Kometen</h2>
+    </div>
+</div>
+<ul id="main_nav">
+    <li class="main_nav_link active"><a href="/">Startseite</a></li>
+    <li class="main_nav_link"><a href="/">Informationen</a></li>
+    <li class="main_nav_link"><a href="/">Neues</a></li>
+    <li class="main_nav_link_float"><a href="/login">Login</a></li>
+    <li class="main_nav_link_float"><a href="/contact">Kontakt</a></li>
+</ul>
+
+<div class="info_headline"><h2>Neuer Eintrag</h2></div>
+
+<form action="/add" method="post">
+
+    <label for="headline"><p>Titel:</p> </label>
+    <input type="text" name="headline" id="headline">
+
+    <br /><br />
+    <label for="text"><p>Text:</p></label><br />
+    <textarea id="text" name="text" cols="30" rows="10"></textarea><br/>
+
+    <label for="date"><p>Datum:</p> </label>
+    <input type="date" name="date" id="date">
+    <p>
+    <input type="submit" name="button" value="Bestätigen">
+    </p>
+</form>
+
+</div>
+
+<footer>
+    <div class="impressum">| <a href="/Zeitstrahl.pdf">ZEITLEISTE</a> | <a href="/impressum">IMPRESSUM</a> | <a href="/">DOKUMENTATION</a></div>
+</footer>
+</body>
+</html>

@@ -33,6 +33,7 @@ module.exports = {
         });
     },
 
+
     contact: function (db, req, res) {
         res.render('kontakt','');
     },
