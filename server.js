@@ -51,7 +51,7 @@ app.get('/entry/add',function(req, res){
     controller.add(db, req, res);
 });
 app.get('/login',function(req, res){
-    controller.login(db, req, res);
+    controller.login(req, res);
 });
 app.get('/logout',function(req, res){
     controller.logout(db, req, res);

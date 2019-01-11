@@ -41,7 +41,7 @@ module.exports = {
         res.render('impressum','');
     },
 
-    login: function (db, req, res) {
+    login: function (req, res) {
         res.render('login','');
     },
 
