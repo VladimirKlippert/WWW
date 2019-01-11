@@ -6,27 +6,30 @@ module.exports = {
         model.start(db, (rows) => {
             let text =[];
             let headline = [];
+            let img = [];
+            let id = [];
             rows.forEach(row=>
             {
                 text.push (row.Text);
-
+                headline.push(row.Title);
+                img.push(row.imgid);
+                id.push(row.Id);
 
             });
-            res.render('index', {text:text},'');
+            res.render('index', {text:text, headline:headline, img:img, id:id},'');
         });
     },
 
     post: function (db, req, res) {
         let id = Number(req.params.id);
         model.post(db, id, (rows) => {
-            let text =[]
+            let text =[];
             rows.forEach(row=>
             {
                 text.push (row.Text);
 
-
             });
-            res.render('index', {text:text},'');
+            res.render('entry', {text:text},'');
         });
     },
 
@@ -37,5 +40,10 @@ module.exports = {
     impressum: function (db, req, res) {
         res.render('impressum','');
     },
+
+    login: function (db, req, res) {
+        res.render('login','');
+    },
+
 
 };

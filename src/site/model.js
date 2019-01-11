@@ -9,7 +9,7 @@ module.exports = {
         });
     },
 
-    post: function (db, callbacks) {
+    post: function (db, id, callbacks) {
         db.all("SELECT * FROM entry WHERE Id = " + id, [], (err, rows) => {
             if (err) {
                 console.error(err);

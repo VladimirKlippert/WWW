@@ -23,55 +23,57 @@
     <li class="main_nav_link_float"><a href="/contact">Kontakt</a></li>
     </ul>
 </div>
-<h2 id="content_box_wide">
-    {% for element in headline %}
+
+<div class="main_content">
+    <div class="col content_box_big">
+        <div class="content_img_txt">
+            <img src="{{img[0]}}">
+            <div class="content_img_txt_overlay">
+                <h2>Erfolg!</h2><p>{{headline[0]}}</p>
+            </div>
+        </div>
+    </div>
     <div class="col content_box_wide">
         <div class="content_img_txt">
             <div class="txt_justify">
-                {{element}}
-            </div> </div> </div>
-    {% endfor%}
-</h2>
-{% for element in text %}
-<div class="col content_box_wide">
-    <div class="content_img_txt">
-        <div class="txt_justify">
-            {{element}}
-        </div> </div></div>
-{% endfor%}
+                {{text[0]}}
+                <p><a href="/entry/{{id[0]}}">[mehr lesen...]</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="main_content">
     <div class="col content_box">
-        <img src="img/ringvorlesung.jpg">
+        <img src="{{img[1]}}">
         <div class="content_img_txt_info">
-            <h3>Ringvorlesung</h3>
-            <p>Im Rahmen der Ringvorlesung »Astronomie und Raumfahrt« der Fachhochschule Flensburg, organisiert von Rainer Christiansen, wurde Dr. Holger Sierks vom Max Planck Institut für Sonnensystemforschung aus Göttingen eingeladen.</p>
-            <p><a href="/">[mehr lesen...]</a></p>
+            <h3>{{headline[1]}}</h3>
+            <p>{{text[1]}}</p>
+            <p><a href="/entry/{{id[1]}}">[mehr lesen...]</a></p>
         </div>
     </div>
     <div class="col content_box">
-        <img src="img/kometenlander_philae.jpg">
+        <img src="{{img[2]}}">
         <div class="content_img_txt_info">
-            <h3>Lander Philae gesichtet</h3>
-            <p>Am Morgen nach der Landung konnte im Kontrollzentrum der ESA zwischen 07:01 und 10:58 Uhr MEZ wieder Kontakt mit Philae aufgenommen werden.</p>
-            <p><a href="/#new">[mehr lesen...]</a></p>
+            <h3>{{headline[2]}}</h3>
+            <p>{{text[2]}}</p>
+            <p><a href="/entry/{{id[2]}}#new">[mehr lesen...]</a></p>
         </div>
     </div>
     <div class="col content_box">
-        <img src="img/sonde_rosetta.jpg">
+        <img src="{{img[3]}}">
         <div class="content_img_txt_info">
-            <h3>Mission erfolgreich beendet</h3>
-            <p>Zum Ende der Mission ließ man Rosetta am 30. September 2016 gezielt auf den Kometen fallen.</p>
-            <p>Fünf Sekunden vor dem Aufprall wurde die letzte Nahaufnahme aus etwa 20 m Abstand erstellt, die nicht mehr fokussiert war und aus Zeitmangel nur hochkomprimiert übertragen werden konnte.</p>
-            <p><a href="/">[mehr lesen...]</a></p>
+            <h3>{{headline[3]}}</h3>
+            <p>{{text[3]}}</p>
+            <p><a href="/entry/{{id[3]}}">[mehr lesen...]</a></p>
         </div>
     </div>
     <div class="col content_box">
-        <img src="img/komet4.jpg">
+        <img src="{{img[4]}}">
         <div class="content_img_txt_info">
-            <h3>67P/Churymov-Gerasimenko</h3>
-            <p>Hinsichtlich der Entstehung von Tschurjumow-Gerassimenko vermuteten Forscher entweder eine Kollision zweier separater Körper oder eine besonders intensive Erosion an der Stelle des Kometen, die sich daraufhin zu einem „Hals“ entwickelt hat.</p>
-            <p><a href="/">[mehr lesen...]</a></p>
+            <h3>{{headline[4]}}</h3>
+            <p>{{text[4]}}</p>
+            <p><a href="/entry/{{id[4]}}">[mehr lesen...]</a></p>
         </div>
     </div>
 </div>
