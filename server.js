@@ -25,49 +25,37 @@ const njk = expressNunjucks(app, {
     autoescape: true
 });
 
+const db = new sqlite3.Database("./data/posts.db", err => {
+    if (err) {
+        console.error(err);
+    }
+});
+
 app.get("/", function(req, res) {
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
         controller.start(db, req, res);
-    });
 });
 
 app.get("/entry/:id", function(req, res) {
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
         controller.post(db, req, res);
-    });
+});
+
+app.get("/entry/:id/edit", function(req, res) {
+        controller.edit(db, req, res);
+});
+app.post('/entry/:id/edit',function(req, res){
+    formcontroller.editdata(db, req, res)
 });
 
 app.get("/contact", function(req, res) {
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
         controller.contact(db, req, res);
-    });
 });
 
 app.get('/add',function(req, res){
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
     formcontroller.add(db, req, res);
-    });
 });
 
 app.post('/add',function(req, res){
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
     formcontroller.adddata(db, req, res)
-    });
 });
 
 app.get('/login',function(req, res){
@@ -77,22 +65,11 @@ app.get('/logout',function(req, res){
     controller.logout(db, req, res);
 });
 app.get('/impressum',function(req, res){
-
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
         controller.impressum(db, req, res);
-    });
 });
 
 app.get('/info',function(req, res){
-    const db = new sqlite3.Database("./data/posts.db", err => {
-        if (err) {
-            console.error(err);
-        }
     controller.info(db, req, res);
-    });
 });
 
 app.use(function (req, res) {

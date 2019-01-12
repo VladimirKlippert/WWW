@@ -27,4 +27,12 @@ module.exports = {
         })
 
     },
+
+    editData: function(db,next, req, res){
+        sql ="UPDATE entry SET Title = $headline, Text = $text, Date = $date WHERE Id = $id";
+        db.run(sql,{$headline: req.body.headline, $text:req.body.text, $id:req.body.id, $date:req.body.date}, function(err){
+            if(err) throw err;
+            next(res);
+        })
+    }
 };

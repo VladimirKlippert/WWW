@@ -24,17 +24,21 @@
     </ul>
 </div>
 
-<div class="main_content">
-    <div class="center content_box_wide">
-        <div class="info_headline"><h2>{{headline}}</h2></div>
-        <img src="{{img}}">
-        <div class="content_img_txt">
-            <div class="txt_justify">
-                <p>{{text}}</p>
-                <p><a href="/entry/{{id}}/edit">[edit]</a></p>
-            </div>
+<div class="center">
+    <div class="info_headline"><h2>Bearbeite Eintrag</h2></div>
+    <form action="/entry/{{id}}/edit" method="post">
+
+        <label for="headline"><p>Titel:</p> </label>
+        <input type="text" name="headline" id="headline" value = {{headline}}>
+
+        <br /><br />
+        <div contenteditable = "true" id="text" >
+                         {{text}}
         </div>
-    </div>
+        <p>
+            <input type="submit" name="button" value="Bestätigen">
+        </p>
+    </form>
 </div>
 
 <footer>

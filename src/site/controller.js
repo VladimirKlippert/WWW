@@ -32,10 +32,25 @@ module.exports = {
                 headline.push(row.Title);
                 img.push(row.imgid);
             });
-            res.render('entry', {text:text, headline:headline, img:img},'');
+            res.render('entry', {text:text, headline:headline, img:img, id:id},'');
         });
     },
 
+    edit: function (db, req, res) {
+        let id = Number(req.params.id);
+        model.post(db, id, (rows) => {
+            let text =[];
+            let headline = [];
+            let img = [];
+            rows.forEach(row=>
+            {
+                text.push (row.Text);
+                headline.push(row.Title);
+                img.push(row.imgid);
+            });
+            res.render('editentry', {text:text, headline:headline, img:img, id:id},'');
+        });
+    },
 
     contact: function (db, req, res) {
         res.render('kontakt','');
