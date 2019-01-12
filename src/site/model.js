@@ -20,8 +20,11 @@ module.exports = {
     },
 
     addData: function (db,next, req,res){
-        sql = `INSERT INTO entry (Id, Title, Text, Date) VALUES ($id, $headline, $text, $date)`;
-
+        sql = "INSERT INTO eintrag (Title, Text, Date) VALUES ($headline, $text, $date)";
+        db.run(sql,{$headline: req.body.headline, $text:req.body.text, $date:req.body.date}, function(err){
+            if(err) throw err;
+            next(res);
+        })
 
     },
 };

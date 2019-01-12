@@ -142,6 +142,13 @@ li a:hover:not(.active) {
     display: table-cell;
     vertical-align: middle 
 }
+.center {
+  margin: auto;
+  width: 50%;
+  text-align: center;
+  padding: 10px;
+}
+
 
 .content_box_big { width: 49.2%; }
 .content_box { width: 23.8%; }

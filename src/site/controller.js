@@ -46,5 +46,8 @@ module.exports = {
         res.render('login','');
     },
 
+    info: function (db,req, res) {
+        res.render('info','');
+    },
 
 };

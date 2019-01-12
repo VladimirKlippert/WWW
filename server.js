@@ -82,6 +82,15 @@ app.get('/impressum',function(req, res){
     });
 });
 
+app.get('/info',function(req, res){
+    const db = new sqlite3.Database("./data/posts.db", err => {
+        if (err) {
+            console.error(err);
+        }
+    controller.info(db, req, res);
+    });
+});
+
 app.use(function (req, res) {
     res.send("404 Not Found, blyat!");
 });
