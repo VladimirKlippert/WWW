@@ -9,8 +9,12 @@ const sqlite3 = require("sqlite3");
 const controller = require("./src/site/controller");
 const formcontroller =require("./src/site/formcontroller")
 
+const bodyparser = require('body-parser');
 const app = express();
+
 app.use(express.static("public"));
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json());
 
 const port = 3000;
 const host = "127.0.0.1";

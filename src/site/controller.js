@@ -24,12 +24,15 @@ module.exports = {
         let id = Number(req.params.id);
         model.post(db, id, (rows) => {
             let text =[];
+            let headline = [];
+            let img = [];
             rows.forEach(row=>
             {
                 text.push (row.Text);
-
+                headline.push(row.Title);
+                img.push(row.imgid);
             });
-            res.render('entry', {text:text},'');
+            res.render('entry', {text:text, headline:headline, img:img},'');
         });
     },
 
